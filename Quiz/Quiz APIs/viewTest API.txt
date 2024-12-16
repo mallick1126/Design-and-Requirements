@@ -1,0 +1,66 @@
+Description : this API will be used to view the question and there answers for the perticular test given by user 
+
+viewTest API :
+
+Method : POST
+URL : /app/quiz/viewTest
+payload : 
+{
+    "userId": "Long",
+    "testId": "Long"
+}
+
+response : 
+{
+    "questionList": [
+        {
+            "qid": "Long",
+            "questionsName": "String",
+            "correctOptionId": "Long",
+            "selectedOptionId": "Long",
+            "options": [
+                {
+                    "optionId": "Long",
+                    "option": "String"
+                },
+                {
+                    "optionId": "Long",
+                    "option": "String"
+                },
+                {
+                    "optionId": "Long",
+                    "option": "String"
+                },
+                {
+                    "optionId": "Long",
+                    "option": "String"
+                }
+            ]
+        }
+    ]
+}
+
+--------------OR------------------
+
+{
+    "questionList": [
+        {
+            "qid": "Long",
+            "questionsName": "String",
+            "correctOptionId": "Long",
+            "selectedOptionId": "Long",
+            "optionIds": [
+                "Long",
+                "Long",
+                "Long",
+                "Long"
+            ],
+            "options": [
+                "String",
+                "String",
+                "String",
+                "String"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+Quiz requirements:
+
+-> each quiz will have different question for user.
+
+-> each question will have diffrent options each time.
+
+-> user can attempt quiz mutiple times.
+
+-> highest score and latest score will be displayed.
+
+-> login is compulsary for attempt the quiz (will be implemented after the login is implemented).
+
+-> user will get the option to retry the quiz or to view answers, if he retry then he will get new set of questions and if he view he will get the questions along with correct answers and selected option.
+
+-> passing score will be 80 percent.
+
+-> user will see one question at a time.
+
+-> user will see stepper for the indication of the number quetions done and number of questions remaining.
+
+-> user cannot switch between menus while test is going on.
+
+-> if user refreshes page while test in going on or user's internet connection is lost, and after that same set of questions and answers given for that test should be visible to user it should not be new set of questions for perticular time.
+
+-> any unattempted test should be given to user for next test attempt.
+
+-> number of questions for each test will be 10.
+
+-> user will get 10 min to solve the test (will be implemented later on).
+
+-> quiz should contain 2 easy, 5 medium and 3 difficult questions (will be implemented later on).
+
+-> user can take the category wise quiz as well (will be implemented later on).
+

@@ -1,0 +1,38 @@
+Solution :
+
+-> three apis will be created 
+	getTest -> to get the test
+	submitTest -> to submit the test
+	viewTest -> to view test
+
+-> four tables will be created
+	question_master -> to store all the questions
+	answer_master -> to store all the answers of each question
+	test_master -> to store the test created for the user
+	test_question_map -> to store the mapping of the questions generated for the each test and the answers sequence generated for the each questions
+
+-> as user start the test getTest API will be called,
+-> in getTest API, 
+1. if there are any unattempted test are available for the user in test_master table then that test will be returned.
+2. if there are no any unattempted test available then will check if there are any test available in test_master table which are generated for other users other than current user and skip the last 10 latest test for the and retuned any random test among them.   
+3. if above condition is not met 
+	3.1 then generate the random test by picking 10 random question from the question_master.
+	3.2 then answers for the picked question from answer_master table as of now number of answers or say option for one question will be 4 only so after picking all four answers shuffle the set of answers to get randomness
+	3.3 then store the randomly generated test to the test_master and test_question_map table and return it to the user.
+4. create a separate function which will take set of values and n(count) and then will return the set of 'n' random values picked from the given set of values, 
+	4.1 this will be used in picking the random 1 test_id from set of available test_ids picked from the test_master table, mentioned in point number 2
+	4.2 this will be used in picking random 10 question_ids from the available question_ids picked from the question_master table mentioned in point number 3
+
+
+-> after the test is completed the user submitTest api will be called
+-> in submitTest API
+1. check the question and there corresponding the answers given by user from the answer_master table.
+2. then calculated score based upon that if score is above 80% user has passed that test otherwise failed the test.
+3. then mark the test as attempted in the test_master table's is_attempted column as 'Y' and insert the score of the test as well.
+4. then calculate the highest score of the user till now taking scores for perticular user from the test_master table
+5. then return the score and highest score to the user.
+
+-> after the test submition if user wants to view the answers then viewTest will be called
+1. in this get the test_id and return the test corresponding to the test id from the test_master, the test_question_map and answer_master table by selecting the correct answers among the given options for any particular question of the test.
+
+	
