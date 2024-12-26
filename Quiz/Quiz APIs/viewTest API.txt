@@ -39,28 +39,3 @@ response :
         }
     ]
 }
-
---------------OR------------------
-
-{
-    "questionList": [
-        {
-            "qid": "Long",
-            "questionsName": "String",
-            "correctOptionId": "Long",
-            "selectedOptionId": "Long",
-            "optionIds": [
-                "Long",
-                "Long",
-                "Long",
-                "Long"
-            ],
-            "options": [
-                "String",
-                "String",
-                "String",
-                "String"
-            ]
-        }
-    ]
-}
