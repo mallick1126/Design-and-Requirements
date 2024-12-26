@@ -37,27 +37,3 @@ response :
         }
     ]
 }
-
---------------OR------------------
-
-{
-    "testId": "Long",
-    "questionList": [
-        {
-            "questionId": "Long",
-            "question": "String",
-            "optionIds": [
-                "Long",
-                "Long",
-                "Long",
-                "Long"
-            ],
-            "options": [
-                "String",
-                "String",
-                "String",
-                "String"
-            ]
-        }
-    ]
-}
