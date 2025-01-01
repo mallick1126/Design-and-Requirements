@@ -34,29 +34,27 @@ response :
                     "option": "String"
                 }
             ]
-        }
-    ]
-}
-
---------------OR------------------
-
-{
-    "testId": "Long",
-    "questionList": [
-        {
+        },
+	  {
             "questionId": "Long",
             "question": "String",
-            "optionIds": [
-                "Long",
-                "Long",
-                "Long",
-                "Long"
-            ],
             "options": [
-                "String",
-                "String",
-                "String",
-                "String"
+                {
+                    "optionId": "Long",
+                    "options": "String"
+                },
+                {
+                    "optionId": "Long",
+                    "option": "String"
+                },
+                {
+                    "optionId": "Long",
+                    "option": "String"
+                },
+                {
+                    "optionId": "Long",
+                    "option": "String"
+                }
             ]
         }
     ]

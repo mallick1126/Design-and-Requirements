@@ -20,29 +20,8 @@ payload :
     ]
 }
 
---------------OR------------------
-
-{
-    "userId": "Long",
-    "testId": "Long",
-    "questionsList": [
-        "Long",
-        "Long",
-        "Long",
-        "Long"
-    ],
-    "answersList": [
-        "Long",
-        "Long",
-        "Long",
-        "Long"
-    ]
-}
-
-
 response : 
 {
     "score": "String",
-    "Grade": "String",
-    "highestScore": "String"
+    "Grade": "String"
 }

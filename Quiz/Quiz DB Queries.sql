@@ -44,16 +44,15 @@ CREATE TABLE test_master (
     score INT NOT NULL,
     category VARCHAR(200),
     level VARCHAR(50),
-    is_attempted VARCHAR(1) NOT NULL,
+    test_status VARCHAR(50) NOT NULL,
     created_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
     updated_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
     status VARCHAR(1) NOT NULL,
     CONSTRAINT test_master_primary_key PRIMARY KEY (test_id),
     CONSTRAINT user_id_fk_from_test_master_to_user_table FOREIGN KEY (user_id) REFERENCES users(user_id),
-    CONSTRAINT test_master_is_attempted_check_value_either_Y_or_N CHECK (is_attempted IN ('Y', 'N')),
+    CONSTRAINT test_master_test_status_check_either_completed_or_init CHECK (test_status IN ('completed', 'init')),
     CONSTRAINT test_master_status_check_value_either_A_or_I CHECK (status IN ('A', 'I'))
 );
-
 
 create table test_question_map(
 	test_question_map_id INT GENERATED ALWAYS AS IDENTITY,
