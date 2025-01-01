@@ -1,67 +1,67 @@
 question_master Table : 
 
-question_master_Id 	primary key						                INTEGER
-question	 		not null						                TEXT
-category										                    VARCHAR(500)
-level											                    VARCHAR(50)	
-description 									                    TEXT		
-created_on			not null and default to current datetime	    TIMESTAMP
-updated_on			not null and default to current datetime	    TIMESTAMP
-status 			    not null and check either I or A		        VARCHAR(1)
+question_master_Id 	primary key						INTEGER
+question	 		not null						TEXT
+category										VARCHAR(500)
+level											VARCHAR(50)	
+description 									TEXT		
+created_on			not null and default to current datetime	TIMESTAMP
+updated_on			not null and default to current datetime	TIMESTAMP
+status 			not null and check either I or A		VARCHAR(1)
 
--------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
 
 answes_master Table : 
 
-answer_master_id    primary key						                INTEGER
-answer	 		    not null						                TEXT
-question_id 		not null and foreign Key question_master	    INTEGER
-is_correct			not null and check either Y or N 		        VARCHAR(1)
-created_on			not null and default to current datetime	    TIMESTAMP
-updated_on			not null and default to current datetime	    TIMESTAMP
-status 			    not null and check either I or A		        VARCHAR(1)
+answer_master_id 		primary key						INTEGER
+answer	 		not null						TEXT
+question_id 		not null and foreign Key question_master	INTEGER
+is_correct			not null and check either Y or N 		VARCHAR(1)
+created_on			not null and default to current datetime	TIMESTAMP
+updated_on			not null and default to current datetime	TIMESTAMP
+status 			not null and check either I or A		VARCHAR(1)
 
 -------------------------------------------------------------------------------------------
 
 test_master Table : 
 
-test_master_id 	    primary key						                INTEGER
-user_id 		    not null and foreign key user			        INTEGER
-Score 		        not null						                INTEGER
-category									                        VARCHAR(200)
-level										                        VARCHAR(50)	
-is_attempted	    not null and check either Y or N		        VARCHAR(1)
-created_on		    not null and default to current datetime	    TIMESTAMP
-updated_on		    not null and default to current datetime	    TIMESTAMP
-status 		        not null and check either I or A		        VARCHAR(1)
+test_master_id 	primary key							INTEGER
+user_id 		not null and foreign key user				INTEGER
+Score 		not null							INTEGER
+category										VARCHAR(200)
+level											VARCHAR(50)	
+test_status		not null and check either 'init' or 'completed'	VARCHAR(50)
+created_on		not null and default to current datetime		TIMESTAMP
+updated_on		not null and default to current datetime		TIMESTAMP
+status 		not null and check either I or A			VARCHAR(1)
 
 -----------------------------------------------------------------------------------------------
 
 test_question_map :
 
-test_question_map_id 	primary key						            INTEGER
-test_id 			    not null and foreign key test_master	    INTEGER
-question_id 		    not null and foreign key question_master	INTEGER
-users_answer_id		    not null and foreign key answer_master	    INTEGER
-given_option1		    not null and foreign key answer_master	    INTEGER		
-given_option2		    not null and foreign key answer_master	    INTEGER
-given_option3		    not null and foreign key answer_master	    INTEGER
-given_option4		    not null and foreign key answer_master	    INTEGER
-created_on			    not null and default to current datetime	TIMESTAMP
-updated_on			    not null and default to current datetime	TIMESTAMP
-status 			        not null and check either I or A		    VARCHAR(1)
+test_question_map_id 	primary key						INTEGER
+test_id 			not null and foreign key test_master	INTEGER
+question_id 		not null and foreign key question_master	INTEGER
+users_answer_id		not null and foreign key answer_master	INTEGER
+given_option1		not null and foreign key answer_master	INTEGER		
+given_option2		not null and foreign key answer_master	INTEGER
+given_option3		not null and foreign key answer_master	INTEGER
+given_option4		not null and foreign key answer_master	INTEGER
+created_on			not null and default to current datetime	TIMESTAMP
+updated_on			not null and default to current datetime	TIMESTAMP
+status 			not null and check either I or A		VARCHAR(1)
 
 
 -------------------------------------------------------------------------------------------
 
-users :
+user :
 
-user_id		    primary key						                INTEGER
-email			not null 						                VARCHAR(200)
-password 		not null						                VARCHAR(50)
-created_on		not null and default to current datetime	    TIMESTAMP
-updated_on		not null and default to current datetime	    TIMESTAMP
-status 		    not null and check either I or A		        VARCHAR(1)
+user_id		primary key						INTEGER
+email			not null 						VARCHAR(200)
+password 		not null						VARCHAR(50)
+created_on		not null and default to current datetime	TIMESTAMP
+updated_on		not null and default to current datetime	TIMESTAMP
+status 		not null and check either I or A		VARCHAR(1)
 
 
 

@@ -23,6 +23,5 @@ payload :
 response : 
 {
     "score": "String",
-    "Grade": "String",
-    "highestScore": "String"
+    "Grade": "String"
 }

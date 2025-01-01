@@ -36,6 +36,30 @@ response :
                     "option": "String"
                 }
             ]
+        },
+	  {
+            "qid": "Long",
+            "questionsName": "String",
+            "correctOptionId": "Long",
+            "selectedOptionId": "Long",
+            "options": [
+                {
+                    "optionId": "Long",
+                    "option": "String"
+                },
+                {
+                    "optionId": "Long",
+                    "option": "String"
+                },
+                {
+                    "optionId": "Long",
+                    "option": "String"
+                },
+                {
+                    "optionId": "Long",
+                    "option": "String"
+                }
+            ]
         }
     ]
 }
