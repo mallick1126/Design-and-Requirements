@@ -3,7 +3,7 @@ Description : This API will be used to generate the questions for the user if he
 getQuestions API :
 
 Method : POST
-URL : /app/quiz/getTest
+URL : /app/quiz/getQuiz
 payload : 
 {
     "userId": "Long"
@@ -11,8 +11,9 @@ payload :
 
 response : 
 {
+    "userId": "Long"
     "testId": "Long",
-    "questionList": [
+    "questionsList": [
         {
             "questionId": "Long",
             "question": "String",

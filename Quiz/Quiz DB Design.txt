@@ -27,7 +27,7 @@ test_master Table :
 
 test_master_id 	primary key							INTEGER
 user_id 		not null and foreign key user				INTEGER
-Score 		not null							INTEGER
+Score 										INTEGER
 category										VARCHAR(200)
 level											VARCHAR(50)	
 test_status		not null and check either 'init' or 'completed'	VARCHAR(50)
@@ -42,8 +42,8 @@ test_question_map :
 test_question_map_id 	primary key						INTEGER
 test_id 			not null and foreign key test_master	INTEGER
 question_id 		not null and foreign key question_master	INTEGER
-users_answer_id		not null and foreign key answer_master	INTEGER
-given_option1		not null and foreign key answer_master	INTEGER		
+users_answer_id	 	foreign key answer_master			INTEGER
+given_option1		not null and foreign key answer_master	INTEGER
 given_option2		not null and foreign key answer_master	INTEGER
 given_option3		not null and foreign key answer_master	INTEGER
 given_option4		not null and foreign key answer_master	INTEGER
@@ -62,10 +62,3 @@ password 		not null						VARCHAR(50)
 created_on		not null and default to current datetime	TIMESTAMP
 updated_on		not null and default to current datetime	TIMESTAMP
 status 		not null and check either I or A		VARCHAR(1)
-
-
-
-
-	
-
-
