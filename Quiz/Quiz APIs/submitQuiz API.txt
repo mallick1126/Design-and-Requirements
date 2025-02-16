@@ -3,18 +3,18 @@ Description : This API will be used to submit the anwsers for a particular test 
 submitQuestion API : 
 
 Method : POST
-URL : /app/quiz/submitTest
+URL : /app/quiz/submitQuiz
 payload : 
 {
     "userId": "Long",
     "testId": "Long",
-    "questionsAnswersList": [
+    "questionsList": [
         {
-            "qid": "Long",
+            "questionId": "Long",
             "selectedOptionId": "Long"
         },
         {
-            "qid": "Long",
+            "questionId": "Long",
             "selectedOptionId": "Long"
         }
     ]
