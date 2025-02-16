@@ -41,7 +41,7 @@ CREATE TABLE users (
 CREATE TABLE test_master (
     test_id INT GENERATED ALWAYS AS IDENTITY,
     user_id INT NOT NULL,
-    score INT NOT NULL,
+    score INT,
     category VARCHAR(200),
     level VARCHAR(50),
     test_status VARCHAR(50) NOT NULL,
@@ -58,7 +58,7 @@ create table test_question_map(
 	test_question_map_id INT GENERATED ALWAYS AS IDENTITY,
 	test_id INT NOT NULL,
 	question_id INT NOT NULL,
-	users_answer_id INT NOT NULL,
+	users_answer_id INT,
 	given_option1 INT NOT NULL,
 	given_option2 INT NOT NULL,
 	given_option3 INT NOT NULL,
@@ -75,6 +75,3 @@ create table test_question_map(
 	CONSTRAINT given_Option4_fk_from_test_question_map_to_answer_master FOREIGN KEY (given_option4) REFERENCES answer_master(answer_id),
 	CONSTRAINT test_question_map_status_check_value_either_A_or_I CHECK (status IN ('A','I'))
 )
-
-
-
